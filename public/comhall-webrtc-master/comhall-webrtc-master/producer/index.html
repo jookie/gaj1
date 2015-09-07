@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+  <title>Producer</title>
+  <script type="text/javascript" src="../common.js"></script>
+  <script src="../socket.io-client/socket.io.js">   </script>
+  <script src="../webrtc-js/adapter.js">            </script>
+  <script src="index.js">                           </script>
+  <script>
+  
+  setupSocket(defaultServerUrl);
+  console.log('asking for video '+gumWidth+'X'+gumHeight+'@'+gumFps);
+  navigator.getUserMedia({audio:true, video:{mandatory:{ minWidth:gumWidth, minHeight:gumHeight, minFrameRate:gumFps}}}, gotUserMedia, onErrorCallback);
+  
+  window.onload = function(){
+    document.getElementById('ptzcam').checked = (chosenCamera == 'ptz');
+    document.getElementById('webcam').checked = (chosenCamera == 'web');    
+    document.getElementById('gumWidth').value = gumWidth; 
+    document.getElementById('gumHeight').value = gumHeight;
+    document.getElementById('gumFPS').value = gumFps;
+    trace('getting user media. please, allow access to the media devices.');
+  };
+
+  { // load device lists
+    var audioDevicesList;
+    var videoDevicesList;
+
+    getAudioDevices(function (audioDevices){
+      audioDevicesList = audioDevices;
+      audioList = document.getElementById('audiolist');
+      for (var idx in audioDevices)
+      {
+        var audioDevice = audioDevices[idx];
+        var option = document.createElement('option');
+        option.text = audioDevice.label || 'Microphone '+idx;
+        audioList.add(option);
+      }
+    });
+
+    getVideoDevices(function (videoDevices){
+      videoDevicesList = videoDevices;
+      videoList = document.getElementById('videolist');
+      for (var idx in videoDevices)
+      {
+        var videoDevice = videoDevices[idx];
+        var option = document.createElement('option');
+        option.text = videoDevice.label || 'Camera '+idx;
+        videoList.add(option);
+      }
+    });
+  }
+
+  function startPublishingClick(){
+    var audioList = document.getElementById('audiolist');
+    var videoList = document.getElementById('videolist');
+    var audioSource = audioDevicesList[audioList.selectedIndex];
+    var videoSource = videoDevicesList[videoList.selectedIndex];
+    var constraints = {};
+    
+    gumWidth = document.getElementById('gumWidth').value;
+    gumHeight = document.getElementById('gumHeight').value;
+    gumFps = document.getElementById('gumFPS').value;
+
+    setCookie('gumWidth', gumWidth, 30);
+    setCookie('gumHeight', gumHeight, 30);
+    setCookie('gumFps', gumFps, 30);
+
+    constraints.audio = { optional: [{sourceId: audioSource.id}]};
+    constraints.video = { 
+      mandatory:{ minWidth:gumWidth, minHeight:gumHeight, minFrameRate:gumFps},
+      optional: [{sourceId: videoSource.id}]
+    };
+    
+    trace('asking for video '+gumWidth+'X'+gumHeight+'@'+gumFps);
+    navigator.getUserMedia(constraints, gotUserMedia, onErrorCallback);
+  }
+
+  function reconnectClick(serverUrl){
+    closeAllPeerConnections();
+    shutdownSocket();
+    setupSocket(serverUrl);
+  }
+
+  function cameraChosen(cam){
+    prevCamera = getChosenCamera();
+    setChosenCamera(cam);
+    document.getElementById('ptzcam').checked = (getChosenCamera() == 'ptz');
+    defaultServerUrl = (getChosenCamera() == 'ptz')?ptzcamServerUrl:webcamServerUrl;
+
+    if (prevCamera != getChosenCamera())
+      reconnectClick(defaultServerUrl);
+  }
+  </script>
+</head>
+<body>
+  <div id='settings' style='display:none'>
+    <form action="">
+      Server port: <br>
+      <input type="radio" id="ptzcam" name="camera" value="ptzcamera" onclick="cameraChosen('ptz')">3001 (PTZ Camera) 
+      <input type="radio" id="webcam" name="camera" value="webcamera" onclick="cameraChosen('web')">3002 (Web Camera)
+    </form>
+    <br>
+    <select id="audiolist">
+    </select>
+    <select id="videolist">
+    </select>
+    <button type="button" id="publishButton" onclick="startPublishingClick()">Publish</button>
+    <br>
+    <br>
+    Width: <input type="text" id="gumWidth" value=""> Height: <input type="text" id="gumHeight" value=""> FPS: <input type="text" id="gumFPS" value="">
+    <p id='currentDevices'></p>
+  </div>
+
+  <div id="localvideo">
+    <video id="local-video" width=320 autoplay muted></video>    
+    <video id="remote-video" width=180 autoplay muted></video>    
+    <div id="status"></div>
+  </div>
+  <br>
+  <textarea id="log" style='display:none; width:400px; max-width:800px; min-width:300px; max-height:800px; min-height:200px; height:300px'></textarea>
+</body>
+</html>

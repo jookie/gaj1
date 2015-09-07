@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Common\ActionCommands.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\DelegateCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommandEx.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\ViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\TextPlainConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ThumbnailConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\MapsServices.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\NavigationServices.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\NokiaMusicServices.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ShareServices.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\SpeechServices.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AboutThisAppViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PrivacyViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AppViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GoProVODViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GPTipsTricksViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GoProTipsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GPAthleteTipsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GoProDIYViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GoProFacebookViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GoProPhotosViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GoProMountsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BRLSMountViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GoPoleViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RollPro3ViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GoFlexArmViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PolarProViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\OriginalHandleViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SRPViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DJIPhantomViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EasyGimbalViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TheBobberViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SandmarcTripodMountViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AboutViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\NoImage.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DataImages\FlipSquareTile.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DataImages\FlipWideTile.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DataImages\gptips.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DataImages\gpathlete.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DataImages\GPDIY.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DataImages\facebooklogo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DataImages\brls.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DataImages\gopole.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DataImages\rollpro.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DataImages\goflexarm.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DataImages\polarpro.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DataImages\originalhandle.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DataImages\blurfixsrp.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DataImages\phantomdji.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DataImages\easygimbal.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DataImages\bobber.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\DataImages\sandmarctripod.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\WebControl.xaml.cs">
+      <DependentUpon>WebControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\WebControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+      </ItemGroup>
+</Project>

@@ -1,0 +1,99 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:AppStudio.Controls">
+
+    <!-- ListMetro -->
+    <DataTemplate x:Key="GoProVODList">
+        <Grid MinWidth="380">
+            <GridView ItemsSource="{Binding PreviewItems}" SelectedItem="{Binding NavigationItem, Mode=TwoWay}"
+                     SelectionMode="Single" IsSwipeEnabled="False" ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                     ItemTemplate="{StaticResource GoProVODItem}">
+            </GridView>
+            <ProgressBar Height="40" Foreground="White" VerticalAlignment="Top" IsIndeterminate="True" Visibility="{Binding ProgressBarVisibility}" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="GoProVODListSnapped">
+        <Grid Width="230">
+            <GridView ItemsSource="{Binding PreviewItems}" SelectedItem="{Binding NavigationItem, Mode=TwoWay}"
+                     SelectionMode="Single" IsSwipeEnabled="False" ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                     ItemTemplate="{StaticResource GoProVODItemSnapped}">
+            </GridView>
+            <ProgressBar Height="40" Foreground="White" VerticalAlignment="Top" IsIndeterminate="True" Visibility="{Binding ProgressBarVisibility}" />
+        </Grid>
+    </DataTemplate>
+
+    <!-- ListMetro Item -->
+    <DataTemplate x:Key="GoProVODItem">
+        <Grid Width="320" Height="220">
+            <Grid.Background>
+                <ImageBrush ImageSource="{Binding ImageUrl, Converter={StaticResource ThumbnailConverter}, ConverterParameter=220}" Stretch="UniformToFill" />
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1.1*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="1" VerticalAlignment="Stretch" Background="Black" Opacity="0.7" />
+            <StackPanel Grid.Row="1" Margin="8">
+                <TextBlock Style="{StaticResource ItemHeaderText}" Text="{Binding Title, Converter={StaticResource TextPlainConverter}, ConverterParameter=140}" MaxHeight="40" />
+                <TextBlock Style="{StaticResource ItemSubheaderText}" Text="{Binding Summary, Converter={StaticResource TextPlainConverter}, ConverterParameter=280}" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+        
+    <DataTemplate x:Key="GoProVODItemSnapped">
+        <Grid Width="220" Height="150">
+            <Grid.Background>
+                <ImageBrush ImageSource="{Binding ImageUrl, Converter={StaticResource ThumbnailConverter}, ConverterParameter=220}" Stretch="UniformToFill" />
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1.1*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="1" VerticalAlignment="Stretch" Background="Black" Opacity="0.7" />
+            <StackPanel Grid.Row="1" Margin="8">
+                <TextBlock Style="{StaticResource ItemHeaderTextSnapped}" Text="{Binding Title, Converter={StaticResource TextPlainConverter}, ConverterParameter=140}" MaxHeight="40" />
+                <TextBlock Style="{StaticResource ItemSubheaderTextSnapped}" Text="{Binding Summary, Converter={StaticResource TextPlainConverter}, ConverterParameter=280}" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+        
+
+    <!-- InstanceTitlePhotoDescription -->
+    <DataTemplate x:Key="GoProVOD1DetailDetail">
+        <Grid Margin="12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.ColumnSpan="2" Style="{StaticResource HeaderText}" Text="Video" />
+          
+            <TextBlock Grid.Row="1" Margin="0,12,12,12" VerticalAlignment="Top" Style="{StaticResource ItemHeaderText}" Text="{Binding Title, Converter={StaticResource TextPlainConverter}, ConverterParameter=140}" />
+          
+            <MediaElement Grid.Row="2" Margin="0,24,0,12" Width="480" Height="320" HorizontalAlignment="Left" VerticalAlignment="Top" Source="{Binding MediaUrl}" AreTransportControlsEnabled="True" AutoPlay="False"/>
+          
+            <controls:WebControl Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Margin="24" Html="{Binding Summary}" Foreground="{StaticResource AppForegroundColor}" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="GoProVOD1DetailDetailSnapped">
+        <Grid Width="230">
+            <StackPanel>
+               <TextBlock Margin="0,0,0,30" Style="{StaticResource HeaderText}" Text="Video" />
+                <TextBlock Margin="0, 0, 16, 16" Style="{StaticResource ItemHeaderText}" Text="{Binding Title, Converter={StaticResource TextPlainConverter}, ConverterParameter=140}" />
+                <Image Margin="0" Source="{Binding ImageUrl, Converter={StaticResource ThumbnailConverter}, ConverterParameter=250}" MaxHeight="250" VerticalAlignment="Top" Stretch="UniformToFill" />
+                <controls:WebControl Margin="0,30" Html="{Binding Summary}" Width="230" Height="300" Foreground="{StaticResource AppForegroundColor}" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

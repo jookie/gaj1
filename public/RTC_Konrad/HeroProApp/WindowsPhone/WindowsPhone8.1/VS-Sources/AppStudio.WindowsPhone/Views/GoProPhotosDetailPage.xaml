@@ -1,0 +1,61 @@
+<Page
+    x:Class="AppStudio.Views.GoProPhotosDetail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AppStudio.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+  <Grid Background="{StaticResource AppBackground}">
+    <Grid.ChildrenTransitions>
+      <TransitionCollection>
+        <EntranceThemeTransition/>
+      </TransitionCollection>
+    </Grid.ChildrenTransitions>
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="80"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    
+    <!-- Page title -->
+    <Border x:Name="HeaderHost" Grid.Row="0">
+      <ContentPresenter ContentTemplate="{StaticResource PageHeader}" />
+    </Border>
+    <FlipView Grid.Row="1" AutomationProperties.AutomationId="ItemsFlipView" AutomationProperties.Name="Item Details" TabIndex="1"
+              DataContext="{Binding GoProPhotosModel}"
+              ItemsSource="{Binding Items}"
+              ItemTemplate="{StaticResource GoProPhotos1DetailDetail}"
+              SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+              ItemContainerStyle="{StaticResource FlipItemStyle}">
+    </FlipView>
+
+  </Grid>
+
+  <Page.BottomAppBar>
+    <CommandBar ClosedDisplayMode="Minimal" Visibility="{Binding GoProPhotosModel.AppBarVisibility}" Background="{StaticResource AppBarBackground}">
+      <AppBarButton DataContext="{Binding GoProPhotosModel}" x:Uid="TextToSpeechButton" Visibility="{Binding TextToSpeechVisibility}"
+                    Command="{Binding TextToSpeechCommand}">
+        <AppBarButton.Icon>
+          <BitmapIcon UriSource="ms-appx:///Assets/AppBar/TextToSpeech.png"/>
+        </AppBarButton.Icon>
+      </AppBarButton>
+      <AppBarButton DataContext="{Binding GoProPhotosModel}" x:Uid="RefreshButton" Visibility="{Binding RefreshVisibility}"
+                    Command="{Binding RefreshCommand}">
+        <AppBarButton.Icon>
+          <BitmapIcon UriSource="ms-appx:///Assets/AppBar/Refresh.png"/>
+        </AppBarButton.Icon>
+      </AppBarButton>
+      <AppBarButton DataContext="{Binding GoProPhotosModel}" x:Uid="GoToSourceButton" Visibility="{Binding GoToSourceVisibility}"
+                    Command="{Binding GoToSourceCommand}">
+        <AppBarButton.Icon>
+          <BitmapIcon UriSource="ms-appx:///Assets/AppBar/GoToSource.png"/>
+        </AppBarButton.Icon>
+      </AppBarButton>
+      <CommandBar.SecondaryCommands>
+        <AppBarButton x:Uid="ShareItemButton" Label="share item" DataContext="{Binding GoProPhotosModel}" Visibility="{Binding ShareItemVisibility}" Command="{Binding ShareItemCommand}"/>
+      </CommandBar.SecondaryCommands>
+    </CommandBar>
+  </Page.BottomAppBar>
+</Page>

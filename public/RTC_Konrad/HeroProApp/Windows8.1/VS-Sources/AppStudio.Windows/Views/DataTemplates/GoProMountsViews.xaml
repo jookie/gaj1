@@ -1,0 +1,67 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:AppStudio.Controls">
+
+    <!-- MenuGridPhoto -->
+    <DataTemplate x:Key="GoProMountsList">
+      <Grid>
+        <ListView Width="600"
+                     ItemsSource="{Binding Items}" SelectedItem="{Binding NavigationItem, Mode=TwoWay}"
+                     SelectionMode="Single" IsSwipeEnabled="False" ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                     ItemTemplate="{StaticResource GoProMountsItem}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapGrid Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+      </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="GoProMountsListSnapped">
+      <Grid>
+        <ListView Width="230"
+                     ItemsSource="{Binding Items}" SelectedItem="{Binding NavigationItem, Mode=TwoWay}"
+                     SelectionMode="Single" IsSwipeEnabled="False" ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                     ItemTemplate="{StaticResource GoProMountsItemSnapped}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapGrid Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
+      </Grid>
+    </DataTemplate>
+
+    <!-- MenuGridPhoto Item -->
+    <DataTemplate x:Key="GoProMountsItem">
+        <Grid Width="170" Height="170">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.6"></SolidColorBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="110" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <Image Margin="5" Source="{Binding Icon}" Width="100" Height="100" Stretch="UniformToFill"/>
+            <TextBlock Grid.Row="1" Margin="10, 5" Text="{Binding Title}" Style="{StaticResource MenuItemSmallText}" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="GoProMountsItemSnapped">
+        <Grid Width="170" Height="170">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.6"></SolidColorBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="110" />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <Image Margin="5" Source="{Binding Icon}" Width="100" Height="100" Stretch="UniformToFill"/>
+            <TextBlock Grid.Row="1" Margin="10, 5" Text="{Binding Title}" Style="{StaticResource MenuItemSmallText}" />
+        </Grid>
+    </DataTemplate>
+
+
+</ResourceDictionary>

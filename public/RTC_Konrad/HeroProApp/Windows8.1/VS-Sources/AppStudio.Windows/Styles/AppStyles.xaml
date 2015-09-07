@@ -1,0 +1,188 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <!-- Colors -->
+  <SolidColorBrush x:Key="AppForegroundColor" Color="#ffffff" />
+  <SolidColorBrush x:Key="AppBackgroundColor" Color="#000000" />
+
+  <!-- Images -->
+  <BitmapImage x:Key="AppLogoImage" UriSource="/Assets/ApplicationLogo.png"/>
+  <BitmapImage x:Key="AppBackgroundImage" UriSource="/Assets/NoImage.png"/>
+  <BitmapImage x:Key="NoImage" UriSource="/Assets/NoImage.png"/>
+
+  <!-- App Background -->
+  <SolidColorBrush x:Key="AppBackground" Color="#000000" />
+
+  <!-- AppBar Background -->
+  <SolidColorBrush x:Key="AppBarBackground" Color="#212021" />
+
+  <!-- Page Header -->
+  <DataTemplate x:Key="PageHeader">
+    <!-- Back button and page title -->
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="60"/>
+        <ColumnDefinition Width="80"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      <Button Style="{StaticResource NavigationBackButtonNormalStyle}" Command="{Binding GoBackCommand}" />
+      <Image Grid.Column="1" Margin="0,-20,0,-20" Source="/Assets/Logo.png" Width="80" Height="80" VerticalAlignment="Top" />
+      <TextBlock Grid.Column="2" Margin="20,0" Text="{StaticResource AppTitle}" Style="{StaticResource HeaderTextBlockStyle}" Foreground="{StaticResource AppForegroundColor}"
+                 VerticalAlignment="Top" TextWrapping="NoWrap" IsHitTestVisible="false" />
+    </Grid>
+  </DataTemplate>
+
+  <DataTemplate x:Key="PageHeaderSnapped">
+    <!-- Back button and page title Snapped -->
+    <Grid Margin="0,38">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="60"/>
+        <ColumnDefinition Width="80"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      <Button Margin="0" Style="{StaticResource NavigationBackButtonNormalStyle}" Command="{Binding GoBackCommand}" />
+      <Image Grid.Column="1" Margin="0,-20,0,-20" Source="/Assets/Logo.png" Width="80" Height="80" VerticalAlignment="Top" />
+      <TextBlock Grid.Column="2" Margin="20,0" Text="{StaticResource AppTitle}" Style="{StaticResource HeaderTextBlockStyle}" Foreground="{StaticResource AppForegroundColor}"
+                 VerticalAlignment="Top" TextWrapping="NoWrap" IsHitTestVisible="false" />
+    </Grid>
+  </DataTemplate>
+
+  <DataTemplate x:Key="PageHeaderSimple">
+    <!-- Back button and page title -->
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="60"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      <Button Style="{StaticResource NavigationBackButtonNormalStyle}" Command="{Binding GoBackCommand}" />
+    </Grid>
+  </DataTemplate>
+
+  <!-- Text Styles -->
+  <Style x:Key="BaseItemText" TargetType="TextBlock">
+    <Setter Property="Foreground" Value="{StaticResource AppForegroundColor}" />
+    <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}"/>
+    <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>
+    <Setter Property="SelectionHighlightColor" Value="{ThemeResource TextSelectionHighlightColorThemeBrush}" />
+    <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+    <Setter Property="TextWrapping" Value="Wrap"/>
+    <Setter Property="Typography.StylisticSet20" Value="True"/>
+    <Setter Property="Typography.DiscretionaryLigatures" Value="True"/>
+    <Setter Property="Typography.CaseSensitiveForms" Value="True"/>
+    <Setter Property="LineHeight" Value="20"/>
+    <Setter Property="LineStackingStrategy" Value="BlockLineHeight"/>
+    <Setter Property="TextLineBounds" Value="TrimToBaseline"/>
+    <Setter Property="OpticalMarginAlignment" Value="TrimSideBearings"/>
+  </Style>
+
+  <Style x:Key="HeaderText" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
+    <Setter Property="Foreground" Value="{StaticResource AppForegroundColor}" />
+    <Setter Property="FontSize" Value="26.667"/>
+    <Setter Property="FontWeight" Value="Light"/>
+    <Setter Property="LineHeight" Value="30"/>
+    <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+    <Setter Property="TextWrapping" Value="Wrap"/>
+    <Setter Property="MaxHeight" Value="90"/>
+  </Style>
+
+  <Style x:Key="SubheaderText" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
+    <Setter Property="Foreground" Value="{StaticResource AppForegroundColor}" />
+    <Setter Property="FontSize" Value="26.667"/>
+    <Setter Property="FontWeight" Value="Light"/>
+    <Setter Property="LineHeight" Value="30"/>
+  </Style>
+
+  <Style x:Key="ItemHeaderText" TargetType="TextBlock" BasedOn="{StaticResource BaseItemText}">
+    <Setter Property="FontSize" Value="20"/>
+    <Setter Property="FontWeight" Value="Medium"/>
+    <Setter Property="LineHeight" Value="22"/>
+    <Setter Property="TextWrapping" Value="Wrap" />
+    <Setter Property="TextTrimming" Value="WordEllipsis" />
+    <Setter Property="Typography.Capitals" Value="SmallCaps"/>
+    <Setter Property="MaxHeight" Value="70"/>
+  </Style>
+
+  <Style x:Key="ItemHeaderWrapText" TargetType="TextBlock" BasedOn="{StaticResource ItemHeaderText}">
+    <Setter Property="LineHeight" Value="22"/>
+    <Setter Property="TextWrapping" Value="Wrap" />
+  </Style>
+
+  <Style x:Key="ItemSubheaderText" TargetType="TextBlock" BasedOn="{StaticResource BaseItemText}">
+    <Setter Property="FontSize" Value="15"/>
+    <Setter Property="FontWeight" Value="SemiLight"/>
+    <Setter Property="LineHeight" Value="20"/>
+    <Setter Property="TextWrapping" Value="Wrap" />
+  </Style>
+
+  <Style x:Key="ItemSmallText" TargetType="TextBlock" BasedOn="{StaticResource BaseItemText}">
+    <Setter Property="FontSize" Value="14"/>
+    <Setter Property="FontWeight" Value="SemiLight"/>
+    <Setter Property="LineHeight" Value="18"/>
+    <Setter Property="TextWrapping" Value="Wrap" />
+  </Style>
+
+  <Style x:Key="MenuItemText" TargetType="TextBlock" BasedOn="{StaticResource BaseItemText}">
+    <Setter Property="FontSize" Value="24"/>
+    <Setter Property="LineHeight" Value="20"/>
+    <Setter Property="TextLineBounds" Value="TrimToBaseline" />
+    <Setter Property="TextWrapping" Value="NoWrap" />
+    <Setter Property="TextTrimming" Value="WordEllipsis" />
+  </Style>
+
+  <Style x:Key="MenuItemSmallText" TargetType="TextBlock" BasedOn="{StaticResource BaseItemText}">
+    <Setter Property="FontSize" Value="18"/>
+    <Setter Property="FontWeight" Value="SemiLight"/>
+    <Setter Property="LineHeight" Value="20"/>
+    <Setter Property="TextWrapping" Value="Wrap" />
+    <Setter Property="TextAlignment" Value="Center" />
+    <Setter Property="VerticalAlignment" Value="Top" />
+  </Style>
+
+  <!-- Snapped Item Text-->
+  <Style x:Key="ItemHeaderTextSnapped" TargetType="TextBlock" BasedOn="{StaticResource BaseItemText}">
+    <Setter Property="FontSize" Value="16"/>
+    <Setter Property="FontWeight" Value="Medium"/>
+    <Setter Property="LineHeight" Value="12"/>
+    <Setter Property="TextWrapping" Value="NoWrap" />
+    <Setter Property="TextTrimming" Value="WordEllipsis" />
+    <Setter Property="Typography.Capitals" Value="SmallCaps"/>
+  </Style>
+
+  <Style x:Key="ItemHeaderWrapTextSnapped" TargetType="TextBlock" BasedOn="{StaticResource ItemHeaderText}">
+    <Setter Property="FontSize" Value="16"/>
+    <Setter Property="LineHeight" Value="18"/>
+    <Setter Property="TextWrapping" Value="Wrap" />
+  </Style>
+
+  <Style x:Key="ItemSubheaderTextSnapped" TargetType="TextBlock" BasedOn="{StaticResource BaseItemText}">
+    <Setter Property="FontSize" Value="14"/>
+    <Setter Property="FontWeight" Value="SemiLight"/>
+    <Setter Property="LineHeight" Value="18"/>
+    <Setter Property="TextWrapping" Value="Wrap" />
+  </Style>
+
+  <Style x:Key="ItemSmallTextSnapped" TargetType="TextBlock" BasedOn="{StaticResource BaseItemText}">
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="FontWeight" Value="SemiLight"/>
+    <Setter Property="LineHeight" Value="14"/>
+    <Setter Property="TextWrapping" Value="Wrap" />
+  </Style>
+
+  <Style x:Key="MenuItemTextSnapped" TargetType="TextBlock" BasedOn="{StaticResource BaseItemText}">
+    <Setter Property="FontSize" Value="20"/>
+    <Setter Property="LineHeight" Value="18"/>
+    <Setter Property="TextLineBounds" Value="TrimToBaseline" />
+    <Setter Property="TextWrapping" Value="NoWrap" />
+    <Setter Property="TextTrimming" Value="WordEllipsis" />
+  </Style>
+
+  <Style x:Key="MenuItemSmallTextSnapped" TargetType="TextBlock" BasedOn="{StaticResource BaseItemText}">
+    <Setter Property="FontSize" Value="14"/>
+    <Setter Property="FontWeight" Value="SemiLight"/>
+    <Setter Property="LineHeight" Value="16"/>
+    <Setter Property="TextWrapping" Value="Wrap" />
+    <Setter Property="TextAlignment" Value="Center" />
+    <Setter Property="VerticalAlignment" Value="Top" />
+  </Style>
+</ResourceDictionary>

@@ -1,0 +1,31 @@
+<!--VLC to Website-->
+<!--
+
+https://wiki.videolan.org/Simple_Stream_VLC_to_Website
+
+https://wiki.videolan.org/Documentation:WebPlugin#Introduction:_Building_Web_pages_with_Video
+
+<ASX version ="3.0">
+  <TITLE>Stream1234</TITLE>
+  <ENTRY>
+    <REF HREF="http://192.168.0.42:1234" />
+  </ENTRY>
+</ASX>
+-->
+<!DOCTYPE html>
+<html>
+<title>VLC Mozilla plugin test page</title>
+
+<body>
+<embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org"
+       width="640"
+       height="480"
+       id="vlc"/>
+<script type="text/javascript">
+    <!--
+    var vlc = document.getElementById("vlc");
+    vlc.audio.toggleMute();
+    //-->
+</script>
+</body>
+</html>

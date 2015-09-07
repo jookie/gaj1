@@ -1,0 +1,7 @@
+#HeroProApp Mac OS X
+
+Be a _shiny_ HERO!
+
+Port of HeroProApp to MacOSX App.
+
+![](http://i.imgur.com/QGZrtZw.png)

@@ -1,0 +1,14 @@
+c:\users\dfhdrfg\documents\visual studio 2013\Projects\HeroProAppW7\HeroProAppW7\bin\Debug\HeroProAppW7.exe.config
+c:\users\dfhdrfg\documents\visual studio 2013\Projects\HeroProAppW7\HeroProAppW7\bin\Debug\HeroProAppW7.exe
+c:\users\dfhdrfg\documents\visual studio 2013\Projects\HeroProAppW7\HeroProAppW7\bin\Debug\HeroProAppW7.pdb
+c:\users\dfhdrfg\documents\visual studio 2013\Projects\HeroProAppW7\HeroProAppW7\bin\Debug\HeroProAppW7.xml
+c:\users\dfhdrfg\documents\visual studio 2013\Projects\HeroProAppW7\HeroProAppW7\obj\Debug\HeroProAppW7.HeroProApp.resources
+c:\users\dfhdrfg\documents\visual studio 2013\Projects\HeroProAppW7\HeroProAppW7\obj\Debug\HeroProAppW7.Resources.resources
+c:\users\dfhdrfg\documents\visual studio 2013\Projects\HeroProAppW7\HeroProAppW7\obj\Debug\HeroProAppW7.vbproj.GenerateResource.Cache
+c:\users\dfhdrfg\documents\visual studio 2013\Projects\HeroProAppW7\HeroProAppW7\obj\Debug\HeroProAppW7.exe
+c:\users\dfhdrfg\documents\visual studio 2013\Projects\HeroProAppW7\HeroProAppW7\obj\Debug\HeroProAppW7.xml
+c:\users\dfhdrfg\documents\visual studio 2013\Projects\HeroProAppW7\HeroProAppW7\obj\Debug\HeroProAppW7.pdb
+c:\users\dfhdrfg\documents\visual studio 2013\Projects\HeroProAppW7\HeroProAppW7\bin\Debug\HeroProAppW7.exe.manifest
+c:\users\dfhdrfg\documents\visual studio 2013\Projects\HeroProAppW7\HeroProAppW7\bin\Debug\HeroProAppW7.application
+c:\users\dfhdrfg\documents\visual studio 2013\Projects\HeroProAppW7\HeroProAppW7\obj\Debug\HeroProAppW7.exe.manifest
+c:\users\dfhdrfg\documents\visual studio 2013\Projects\HeroProAppW7\HeroProAppW7\obj\Debug\HeroProAppW7.application

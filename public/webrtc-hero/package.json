@@ -1,0 +1,18 @@
+{
+  "name": "webrtc-hero",
+  "version": "0.0.1",
+  "description": "An experiment with WebRTC",
+  "author": "Andy Andrea <andy.andrea@scimedsolutions.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andycandrea/webrtc-hero"
+  },
+  "dependencies": {
+    "ejs": "^2.3.1",
+    "express": "^4.10.2",
+    "node-static": "^0.7.6",
+    "socket.io": "^1.2.1",
+    "webrtc": "^1.12.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="HeroProAppW7.exe" version="1.0.0.0" publicKeyToken="f5ab3964e6200975" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="HeroProAppW7" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="HeroProAppW7.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Opciones del manifiesto de Control de cuentas de usuario
+          Si desea cambiar el nivel de Control de cuentas de usuario de Windows, reemplace el 
+          nodo requestedExecutionLevel por alguno de los siguientes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Si desea usar la virtualización de archivos y del Registro para la 
+         compatibilidad con versiones anteriores, elimine el nodo requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HeroProAppW7.exe" size="401920">
+      <assemblyIdentity name="HeroProAppW7" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>hKXUdxH8fQnZRqlqhP6q07nc/HdwZ+ex+lBcf+/0/DY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="HeroProAppW7.exe.config" size="186">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>h0UeIdteCM29dGVw07LmHp593fPbh0IN11GyN3f2uRA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="index.html" size="16126">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>w+MUT2DuW1L+WhD053JN7BKWv4MqBiRoBRr92gHEpYg=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=dfhdrfg-PC\dfhdrfg" issuerKeyHash="579f3e2679b68f7f57612a43a7c270dd2a42f239" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>LaBDWtfZyP5HZGHhUD4AK83S1ERYgDk4ObKZiT12mFM=</DigestValue></Reference></SignedInfo><SignatureValue>mfc+9bJOY6AyPWTm/2yg7d3klCc3K2KP1VDS3pcCxy8msb14vTOKr9rsRL/jZCUUSFVKcPfBtEcE4VZ1ERDKZUeMBOHihrV3uEGfHhoHc21mn3lUqgNEAkmEfGDHe4buDGK97cb0RAgPQqzbTH2vP4WTWIrfgrmzUgqyKw6OinQ=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>qyjx6Zg1U2xRJRKNThfeNlFNW9gEKO6h12Dyxjcu3rqgcizMEg0sXMKg6Fux2UTO9tW2inq0zazCpJvanMd4+1+sNlUVRkskyYn6LCrCfrpuL2BsnlOYQoarYU82AGZPEKIw1pnSHH0Yc2acVZxa2otqfMgychCLo5P4EekQ84U=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="5398763d8999b2393839805844d4d2cd2b003e50e1616447fec8d9d75a43a02d" Description="" Url=""><as:assemblyIdentity name="HeroProAppW7.exe" version="1.0.0.0" publicKeyToken="f5ab3964e6200975" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=dfhdrfg-PC\dfhdrfg</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>ps12I9+Lua5pYg9Xmkk8W7dJAYbsL2T9S8fuqa2JyMc=</DigestValue></Reference></SignedInfo><SignatureValue>TxdiDCeagTSxEgg0gZl2sRRqiAwkD4O2/qmuIzFgBv8tCCpSaH/7dBtnoCaUOwMbbY9ufKcwZKUaCuT5jUSSqWXQZJut2MlybflUAIpLEn9ksNuftAAPGztFUuBp9yLZBfrU5jbG+O8KW4IdUH27O5E+S+gNcLsX7i7YZBCER9M=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>qyjx6Zg1U2xRJRKNThfeNlFNW9gEKO6h12Dyxjcu3rqgcizMEg0sXMKg6Fux2UTO9tW2inq0zazCpJvanMd4+1+sNlUVRkskyYn6LCrCfrpuL2BsnlOYQoarYU82AGZPEKIw1pnSHH0Yc2acVZxa2otqfMgychCLo5P4EekQ84U=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB4TCCAUqgAwIBAgIQaNclT8Ztco9NKW91AeC+NjANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDHiQAZABmAGgAZAByAGYAZwAtAFAAQwBcAGQAZgBoAGQAcgBmAGcwHhcNMTQwNDExMjA0ODUyWhcNMTUwNDEyMDI0ODUyWjAvMS0wKwYDVQQDHiQAZABmAGgAZAByAGYAZwAtAFAAQwBcAGQAZgBoAGQAcgBmAGcwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAKso8emYNVNsUSUSjU4X3jZRTVvYBCjuoddg8sY3Lt66oHIszBINLFzCoOhbsdlEzvbVtop6tM2swqSb2pzHePtfrDZVFUZLJMmJ+iwqwn66bi9gbJ5TmEKGq2FPNgBmTxCiMNaZ0hx9GHNmnFWcWtqLanzIMnIQi6OT+BHpEPOFAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAiqlLllSQheuqt9eTnMYtK8ckaDe+Oyg8ZJFv4LHxGGiYq+bO7S/YlmYBav0kQIQtiyu77OGzXR4bs51CyBV4v5/urVEeZu8wp5pBsZ4Bs9/Leoo+H247P6VXIdExxaUe3aMYW5Al6ciywAlxz2nGde03E/wPHdtC3euolwvG+VU=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+  <title>Consumer</title>
+  <script type="text/javascript" src="../common.js"></script>
+  <script src="../webrtc-js/adapter.js"></script>
+  <script src="../socket.io-client/socket.io.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+  <script>
+
+  window.onload = function () {
+    document.getElementById('serverIp').value = defaultProducerAddress;
+    document.getElementById('ptzcam').checked = (chosenCamera == 'ptz');
+    document.getElementById('webcam').checked = (chosenCamera == 'web');
+    setupVideoToCanvasProcessing();
+  }
+
+  function reconnectClick(){
+    disconnect();
+    connect(document.getElementById('serverIp').value);
+  }
+
+  function cameraChosen(cam){
+    prevCamera = getChosenCamera();
+    setChosenCamera(cam);
+    document.getElementById('ptzcam').checked = (getChosenCamera() == 'ptz');
+  }
+
+  </script>
+</head>
+<body>
+  Server: <input type="text" id="serverIp" value="">
+  <button type="button" id="reconnectButton" onclick="reconnectClick()">Fetch</button>
+  <br>
+  <br>
+  <form action="">
+    <input type="radio" id="ptzcam" name="camera" value="ptzcamera" onclick="cameraChosen('ptz')">PTZ Camera<br>
+    <input type="radio" id="webcam" name="camera" value="webcamera" onclick="cameraChosen('web')">Web Camera
+  </form>
+  <br>
+  <div id="remotevideo">
+    <video id="remote-video" width=320 autoplay style="visibility:hidden;"></video>
+    <canvas id="video-canvas"></canvas>
+    <div id="status"></div>
+  </div>
+  <br>
+  <textarea id="log" style='display:none; width:400px; max-width:800px; min-width:300px; max-height:800px; min-height:200px; height:300px'></textarea>
+</body>
+</html>

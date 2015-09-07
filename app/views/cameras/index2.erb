@@ -1,0 +1,42 @@
+<div style="width:1320px;height:1080px;position:absolute;left:0px;top:0px;z-index:0;">
+  <video preload="auto" autoplay>
+    <source src="1.mp4" type="video/mp4">
+    <source src="1.ogv" type="video/ogg">
+  </video>
+</div>
+<div style="width:600px;height:1080px;position:absolute;left:1321px;top:0px;z-index:0;">
+  <video preload="auto" autoplay>
+    <source src="2.mp4" type="video/mp4">
+    <source src="2.ogv" type="video/ogg">
+  </video>
+</div>
+<div style="width:1000px;height:600px;position:absolute;left:200px;top:200px;z-index:5;">
+  <video preload="auto" autoplay>
+    <source src="3.mp4" type="video/mp4">
+    <source src="3.ogv" type="video/ogg">
+  </video>
+</div>
+
+<!--
+I have multiple video tags in single screen with absolute position and want to get that
+longer video from multiple and when longer video ends want to execute code.
+-->
+<script>
+    $(document).ready(function () {
+        var longestVid = "";
+        $("video").each(function () {
+            if (longestVid == "" || longestVid.duration < this.duration)
+                longestVid = this;
+        });
+
+        //To loop all others:
+        $("video").not($(longestVid)).attr("loop", "loop");
+
+        $(longestVid).on("ended", function () {
+
+            //This code will execute when the longest video on the page ends playing.
+
+        });
+
+    });
+</script>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @camera.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @camera.url %>
+</p>
+
+<p>
+  <strong>Caption:</strong>
+  <%= @camera.caption %>
+</p>
+
+<p>
+  <strong>Pw:</strong>
+  <%= @camera.pw %>
+</p>
+
+<p>
+  <strong>Primary:</strong>
+  <%= @camera.primary %>
+</p>
+
+<%= link_to 'Edit', edit_camera_path(@camera) %> |
+<%= link_to 'Back', cameras_path %>

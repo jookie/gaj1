@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{d211ab35-1498-49e1-a8aa-dbf5ee6ed574}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppStudio</RootNamespace>
+    <AssemblyName>AppStudio</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{76F1466A-8B6D-4E39-A767-685A06062A39};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SynthesizeLinkMetadata>true</SynthesizeLinkMetadata>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_PHONE_APP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppxManifest Include="Properties\Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+  <Content Include="Assets\AppBar\GoToSource.png" />
+  <Content Include="Assets\AppBar\PinToStart.png" />
+  <Content Include="Assets\AppBar\Refresh.png" />
+  <Content Include="Assets\AppBar\TextToSpeech.png" />
+  <Content Include="Assets\BadgeLogo.png" />
+  <Content Include="Views\DataTemplates\AppViews.xaml" />
+  <Content Include="Views\DataTemplates\GoProVODViews.xaml" />
+  <Content Include="Views\DataTemplates\GPTipsTricksViews.xaml" />
+  <Content Include="Views\DataTemplates\GoProTipsViews.xaml" />
+  <Content Include="Views\DataTemplates\GPAthleteTipsViews.xaml" />
+  <Content Include="Views\DataTemplates\GoProDIYViews.xaml" />
+  <Content Include="Views\DataTemplates\GoProFacebookViews.xaml" />
+  <Content Include="Views\DataTemplates\GoProPhotosViews.xaml" />
+  <Content Include="Views\DataTemplates\GoProMountsViews.xaml" />
+  <Content Include="Views\DataTemplates\BRLSMountViews.xaml" />
+  <Content Include="Views\DataTemplates\GoPoleViews.xaml" />
+  <Content Include="Views\DataTemplates\RollPro3Views.xaml" />
+  <Content Include="Views\DataTemplates\GoFlexArmViews.xaml" />
+  <Content Include="Views\DataTemplates\PolarProViews.xaml" />
+  <Content Include="Views\DataTemplates\OriginalHandleViews.xaml" />
+  <Content Include="Views\DataTemplates\SRPViews.xaml" />
+  <Content Include="Views\DataTemplates\DJIPhantomViews.xaml" />
+  <Content Include="Views\DataTemplates\EasyGimbalViews.xaml" />
+  <Content Include="Views\DataTemplates\TheBobberViews.xaml" />
+  <Content Include="Views\DataTemplates\SandmarcTripodMountViews.xaml" />
+  <Content Include="Views\DataTemplates\AboutViews.xaml" />
+</ItemGroup>
+
+  <ItemGroup>
+  <Content Include="Assets\SplashScreen.scale-240.jpg" />
+  <Content Include="Assets\ApplicationLogo.png" />
+  <Content Include="Assets\SmallLogo.png" />
+  <Content Include="Assets\Logo.png" />
+  <Content Include="Assets\Square71x71Logo.png" />
+  <Content Include="Assets\WideLogo.png" />
+  <Content Include="Assets\StoreLogo.png" />
+</ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Views\ImageViewer.xaml.cs">
+      <DependentUpon>ImageViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoProTipsPage.xaml.cs">
+      <DependentUpon>GoProTipsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GPAthleteTipsPage.xaml.cs">
+      <DependentUpon>GPAthleteTipsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoProDIYPage.xaml.cs">
+      <DependentUpon>GoProDIYPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoProFacebookPage.xaml.cs">
+      <DependentUpon>GoProFacebookPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BRLSMountPage.xaml.cs">
+      <DependentUpon>BRLSMountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoPolePage.xaml.cs">
+      <DependentUpon>GoPolePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RollPro3Page.xaml.cs">
+      <DependentUpon>RollPro3Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoFlexArmPage.xaml.cs">
+      <DependentUpon>GoFlexArmPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PolarProPage.xaml.cs">
+      <DependentUpon>PolarProPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OriginalHandlePage.xaml.cs">
+      <DependentUpon>OriginalHandlePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SRPPage.xaml.cs">
+      <DependentUpon>SRPPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DJIPhantomPage.xaml.cs">
+      <DependentUpon>DJIPhantomPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EasyGimbalPage.xaml.cs">
+      <DependentUpon>EasyGimbalPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TheBobberPage.xaml.cs">
+      <DependentUpon>TheBobberPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SandmarcTripodMountPage.xaml.cs">
+      <DependentUpon>SandmarcTripodMountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoProVODDetailPage.xaml.cs">
+      <DependentUpon>GoProVODDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoProTipsDetailPage.xaml.cs">
+      <DependentUpon>GoProTipsDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GPAthleteTipsDetailPage.xaml.cs">
+      <DependentUpon>GPAthleteTipsDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoProDIYDetailPage.xaml.cs">
+      <DependentUpon>GoProDIYDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoProFacebookDetailPage.xaml.cs">
+      <DependentUpon>GoProFacebookDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GoProPhotosDetailPage.xaml.cs">
+      <DependentUpon>GoProPhotosDetailPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\ImageViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoProTipsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GPAthleteTipsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoProDIYPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoProFacebookPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BRLSMountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoPolePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RollPro3Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoFlexArmPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PolarProPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OriginalHandlePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SRPPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DJIPhantomPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EasyGimbalPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TheBobberPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SandmarcTripodMountPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoProVODDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoProTipsDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GPAthleteTipsDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoProDIYDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoProFacebookDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GoProPhotosDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+        <Page Include="Styles\ControlStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\AppStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Strings\en-US\Resources.resw">
+      <SubType>Designer</SubType>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.Advertising.Mobile.Display, Version=8.1">
+      <Name>Microsoft Advertising SDK for Windows Phone 8.1 %28XAML%29</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Reference Include="AppStudio.Common">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\AppStudio.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\netcore45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\winrt45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppStudio.Data\AppStudio.Data.csproj">
+      <Project>{d701bc7f-1321-4bf4-b37c-eae46fc2a6b3}</Project>
+      <Name>AppStudio.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(TargetPlatformIdentifier)' == '' ">
+    <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
+  </PropertyGroup>
+  <Import Project="..\AppStudio.Shared\AppStudio.Shared.projitems" Label="Shared" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\$(TargetPlatformVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

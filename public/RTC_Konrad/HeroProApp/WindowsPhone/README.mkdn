@@ -1,0 +1,10 @@
+#Windows Phone
+
+Phone app file and VS sources available in the folders above.
+
+Devices with Windows Phone ***8.1***: in the device, go to chernowii.com/hpawp8-1 to download instantly the app.
+
+Devices with Windows Phone ***8***: in the device, go to chernowii.com/hpawp8 to download instantly the app.
+
+Only for Windows Phone devices.
+

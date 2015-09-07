@@ -1,0 +1,77 @@
+<!--
+> Documentation - www.RTCMultiConnection.org
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Multi Cameras and Many Viewers</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="//cdn.webrtc-experiment.com/style.css">
+    <script type="text/javascript" src="../common.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        document.createElement('article');
+    </script>
+    <!-- scripts used for WebRTC connections -->
+    <script src="//cdn.webrtc-experiment.com/RTCMultiConnection.js"></script>
+    <script src="//cdn.webrtc-experiment.com/firebase.js"></script>
+</head>
+
+<body>
+    <div id="buttons-container"> </div>
+    <article>
+        <div class="github-stargazers"></div>
+        <!-- just copy this <section> and next script -->
+        <section class="experiment">
+            <select id="role">
+                <option>Broadcaster</option>
+                <option>Spectator</option>
+                <option>Producer</option>
+            </select>
+            <button id="continue">Continue</button>
+            <br />
+
+            <div id="videos"></div>
+        </section>
+        <br>
+
+    </article>
+    <br>
+
+    <div id='settings' style='display:none'>
+        <form action="">
+            Server port: <br>
+            <input type="radio" id="ptzcam" name="camera" value="ptzcamera" onclick="cameraChosen('ptz')">3001 (PTZ Camera)
+            <input type="radio" id="webcam" name="camera" value="webcamera" onclick="cameraChosen('web')">3002 (Web Camera)
+        </form>
+        <br>
+        <select id="audiolist">
+        </select>
+        <select id="videolist">
+        </select>
+        <button type="button" id="publishButton" onclick="startPublishingClick()">Publish</button>
+        <br>
+        <br>
+        Width: <input type="text" id="gumWidth" value=""> Height: <input type="text" id="gumHeight" value=""> FPS: <input type="text" id="gumFPS" value="">
+        <p id='currentDevices'></p>
+    </div>
+
+
+    <textarea id="log" style='display:none; width:400px; max-width:800px; min-width:300px; max-height:800px; min-height:200px; height:300px'></textarea>
+
+    <script>
+        var select = document.querySelector('#role');
+        var button = document.querySelector('#continue');
+        var videos = document.querySelector('#videos');
+        var buttonsContainer    = document.getElementById('buttons-container');
+
+        if (button) button.onclick = setupNewBroadcastButtonClickHandler;
+
+    </script>
+</body>
+
+</html>

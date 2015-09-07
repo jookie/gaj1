@@ -1,0 +1,51 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:AppStudio.Controls">
+
+    <!-- ListPhotoLeft -->
+    <DataTemplate x:Key="GPAthleteTipsList">
+        <Grid>
+            <ListView ItemsSource="{Binding Items}" SelectedItem="{Binding NavigationItem, Mode=TwoWay}"
+                     SelectionMode="Single" IsSwipeEnabled="False" ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                     ItemTemplate="{StaticResource GPAthleteTipsItem}">
+            </ListView>
+            <ProgressBar Width="380" Height="40" Foreground="White" VerticalAlignment="Top" IsIndeterminate="True" Visibility="{Binding ProgressBarVisibility}" />
+        </Grid>
+    </DataTemplate>
+
+    <!-- ListPhotoLeft Item -->
+    <DataTemplate x:Key="GPAthleteTipsItem">
+        <Grid Width="380">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="0" Grid.Column="0" Margin="0, 8" Source="{Binding ImageUrl, Converter={StaticResource ThumbnailConverter}, ConverterParameter=220}" MaxHeight="110"
+                    Stretch="UniformToFill" VerticalAlignment="Top" />
+
+          <StackPanel Grid.Row="0" Grid.Column="1">
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Margin="16, 8, 20, 10" Style="{StaticResource ItemHeaderWrapText}" MaxHeight="50" VerticalAlignment="Center"
+                        Text="{Binding Title, Converter={StaticResource TextPlainConverter}, ConverterParameter=140}" />
+            <TextBlock Grid.Row="1" Grid.Column="1" Margin="16, 8, 20, 10" Style="{StaticResource ItemSubheaderText}" MaxHeight="110" VerticalAlignment="Top"
+                        Text="{Binding Summary, Converter={StaticResource TextPlainConverter}, ConverterParameter=280}" />
+          </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+
+    <!-- InstanceTitlePhotoDescription -->
+    <DataTemplate x:Key="GPAthleteTips1DetailDetail">
+        <StackPanel>
+            <TextBlock Margin="0,16" Text="GP Athlete Tip" Style="{StaticResource SubHeaderText}" />
+            <TextBlock Margin="0" Style="{StaticResource ItemHeaderText}" Text="{Binding Title, Converter={StaticResource TextPlainConverter}, ConverterParameter=140}" />
+                        <MediaElement MaxHeight="320" Source="{Binding MediaUrl}" VerticalAlignment="Top" AreTransportControlsEnabled="True" AutoPlay="False"/>
+                        <TextBlock Margin="0,12" Style="{StaticResource ItemContentText}" Text="{Binding Summary, Converter={StaticResource TextPlainConverter}}" />
+        </StackPanel>
+    </DataTemplate>
+
+</ResourceDictionary>

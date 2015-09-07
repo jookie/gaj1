@@ -1,0 +1,25 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:AppStudio.Controls">
+
+    <!-- HtmlList -->
+    <DataTemplate x:Key="EasyGimbalList">
+        <controls:WebControl Html="{Binding Items[0].Content}" Width="640" Foreground="{StaticResource AppForegroundColor}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="EasyGimbalListSnapped">
+        <controls:WebControl Html="{Binding Items[0].Content}" Width="300" Height="340" Foreground="{StaticResource AppForegroundColor}" />
+    </DataTemplate>
+
+    <!-- HtmlItem -->
+    <DataTemplate x:Key="EasyGimbalItem">
+        <controls:WebControl Html="{Binding Content}" Width="640" Foreground="{StaticResource AppForegroundColor}" />
+    </DataTemplate>
+        
+    <DataTemplate x:Key="EasyGimbalItemSnapped">
+        <controls:WebControl Html="{Binding Content}" Width="220" Foreground="{StaticResource AppForegroundColor}" />
+    </DataTemplate>
+        
+
+</ResourceDictionary>

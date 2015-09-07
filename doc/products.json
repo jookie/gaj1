@@ -1,0 +1,82 @@
+[
+  {
+    "name"  :"Golf - Small",
+    "length":48,
+    "width" :14,
+    "height":12,
+    "weight":421
+  },
+  {
+    "name"  :"Golf - Standard",
+    "length":68,
+    "width" :64,
+    "height":22,
+    "weight":621
+  },
+
+  {
+
+    "name" : "Golf - Light",
+    "length": 45.5,
+    "width": 14.2,
+   "height": 5.3,
+    "weight": 45.3
+  },
+  {
+
+    "name" :"Golf - Small-A",
+    "length": 48.1,
+    "width": 15,
+    "height": 6,
+    "weight": 47
+  },
+  {
+
+    "name" : "Golf - Meduim A",
+    "length": 50.7,
+    "width": 16,
+    "height": 7,
+    "weight": 48
+  },
+  {
+
+    "name" : "Golf - Big",
+    "length": 62.2,
+    "width": 17,
+    "height": 9,
+    "weight": 49
+  },
+  {
+
+    "name" : "Golf - Jumbo",
+    "length": 75.2,
+    "width": 19,
+    "height": 8,
+    "weight": 50
+  },
+  {
+
+    "name": "Golf - Super",
+    "length": 76.2,
+    "width": 20,
+    "height": 9,
+    "weight": 54
+  },
+
+  {
+
+    "name" : "Jumbo",
+    "length": 77.2,
+    "width": 19.5,
+    "height": 8,
+    "weight": 50
+  },
+  {
+
+    "name": "Super",
+    "length": 76.2,
+    "width": 20.5,
+    "height": 9,
+    "weight": 54
+  }
+]

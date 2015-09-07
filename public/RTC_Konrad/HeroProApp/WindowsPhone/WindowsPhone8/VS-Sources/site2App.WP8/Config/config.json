@@ -1,0 +1,47 @@
+{
+  "baseURL": "http://m.heropro.chernowii.com",
+  "share": {
+    "enabled": true,
+    "title": "Share this app",
+    "url": "http://m.heropro.chernowii.com",
+    "message": "Checkout HeroProApp for WP8"
+  },
+  "appBar": {
+    "enabled": true,
+    "buttons": [
+      {
+        "label": "App",
+        "icon": "camera",
+        "iconUrl": "",
+        "action": "home"
+      },
+      {
+        "label": "GoPro Videos",
+        "icon": "world",
+        "iconUrl": "",
+        "action": "http://youtube.com/user/goprocamera"
+      },
+      {
+        "label": "GoPro Photos",
+        "icon": "pictures",
+        "iconUrl": "",
+        "action": "http://instagram.com/gopro"
+      },
+      {
+        "label": "GoPro Twitter",
+        "icon": "message",
+        "iconUrl": "",
+        "action": "http://twitter.com/gopro"
+      }
+    ]
+  },
+  "settings": {
+    "enabled": true,
+    "privacyUrl": "http://appstudio.windowsphone.com/home/appprivacyterms",
+    "title": "About",
+    "header": "Web App Template",
+    "HTMLText1": "The Web App Template deliver great mobile websites to your Windows Phone. Get convenient access to all of the site&apos;s mobile web features directly from your app list, plus the ability to pin a tile to your start screen.",
+    "HTMLText2": "",
+    "HTMLText3": ""
+  }
+}

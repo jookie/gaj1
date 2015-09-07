@@ -1,0 +1,48 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:AppStudio.Controls">
+
+    <!-- ListMetro -->
+    <DataTemplate x:Key="GoProVODList">
+        <Grid>
+            <ListView ItemsSource="{Binding Items}" SelectedItem="{Binding NavigationItem, Mode=TwoWay}"
+                     SelectionMode="Single" IsSwipeEnabled="False" ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                     ItemTemplate="{StaticResource GoProVODItem}">
+            </ListView>
+            <ProgressBar Width="400" Height="40" Foreground="White" VerticalAlignment="Top" IsIndeterminate="True" Visibility="{Binding ProgressBarVisibility}" />
+        </Grid>
+    </DataTemplate>
+
+    <!-- ListMetro Item -->
+    <DataTemplate x:Key="GoProVODItem">
+        <Grid Margin="0, 10" Width="320" Height="220">
+            <Grid.Background>
+                <ImageBrush ImageSource="{Binding ImageUrl, Converter={StaticResource ThumbnailConverter}, ConverterParameter=220}" Stretch="UniformToFill" />
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1.1*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="1" VerticalAlignment="Stretch" Background="Black" Opacity="0.7" />
+            <StackPanel Grid.Row="1" Margin="8">
+                <TextBlock Style="{StaticResource ItemHeaderText}"
+                            Text="{Binding Title, Converter={StaticResource TextPlainConverter}, ConverterParameter=140}" MaxHeight="40" />
+                <TextBlock Style="{StaticResource ItemSubheaderText}"
+                            Text="{Binding Summary, Converter={StaticResource TextPlainConverter}, ConverterParameter=280}" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+        
+
+    <!-- InstanceTitlePhotoDescription -->
+    <DataTemplate x:Key="GoProVOD1DetailDetail">
+        <StackPanel>
+            <TextBlock Margin="0,16" Text="Video" Style="{StaticResource SubHeaderText}" />
+            <TextBlock Margin="0" Style="{StaticResource ItemHeaderText}" Text="{Binding Title, Converter={StaticResource TextPlainConverter}, ConverterParameter=140}" />
+                        <MediaElement MaxHeight="320" Source="{Binding MediaUrl}" VerticalAlignment="Top" AreTransportControlsEnabled="True" AutoPlay="False"/>
+                        <TextBlock Margin="0,12" Style="{StaticResource ItemContentText}" Text="{Binding Summary, Converter={StaticResource TextPlainConverter}}" />
+        </StackPanel>
+    </DataTemplate>
+
+</ResourceDictionary>

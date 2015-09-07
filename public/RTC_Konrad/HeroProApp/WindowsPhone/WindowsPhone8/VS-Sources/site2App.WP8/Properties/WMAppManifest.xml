@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+  <DefaultLanguage xmlns="" code="en-US"/>
+  <App xmlns="" ProductID="{ecb29750-b4b0-47b9-a697-abe2ee047c8e}" Title="HeroProApp" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="Windows Phone AppStudio" Description="Be a HER0! Unofficial GoPro client" Publisher="Windows Phone AppStudio" PublisherID="{1d2268c8-c715-4b48-8362-a5838a3f7134}">
+    <IconPath IsRelative="true" IsResource="false">Assets/ApplicationIcon.png</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_NETWORKING" />
+      <Capability Name="ID_CAP_SENSORS" />
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+      <Capability Name="ID_CAP_SPEECH_RECOGNITION" />
+      <Capability Name="ID_CAP_PHONEDIALER" />
+      <Capability Name="ID_CAP_LOCATION" />
+      <Capability Name="ID_CAP_PROXIMITY" />
+      <Capability Name="ID_CAP_IDENTITY_USER" />
+      <Capability Name="ID_CAP_MAP" />
+      <Capability Name="ID_CAP_MEDIALIB_PHOTO" />
+
+      <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
+    </Capabilities>
+    <Tasks>
+      <DefaultTask  Name ="_default" NavigationPage="MainPage.xaml" ActivationPolicy="Resume"/>
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="site2App.WP8Token" TaskName="_default">
+        <TemplateFlip>
+          <SmallImageURI IsRelative="true" IsResource="false">Assets/Tiles/SmallIcon.png</SmallImageURI>
+          <Count></Count>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Assets/Tiles/BackgroundImage.png</BackgroundImageURI>
+          <Title>HeroProApp</Title>
+          <BackContent></BackContent>
+          <BackBackgroundImageURI>Assets/Tiles/BackBackgroundImage.png</BackBackgroundImageURI>
+          <BackTitle></BackTitle>
+          <LargeBackgroundImageURI IsRelative="true" IsResource="false">Assets/Tiles/LargeBackgroundImage.png</LargeBackgroundImageURI>
+          <LargeBackContent></LargeBackContent>
+          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">Assets/Tiles/LargeBackBackgroundImage.png</LargeBackBackgroundImageURI>
+          <DeviceLockImageURI IsRelative="true" IsResource="false"/>
+          <HasLarge>True</HasLarge>
+        </TemplateFlip>
+      </PrimaryToken>
+    </Tokens>
+    <Extensions>
+      <Extension ExtensionName="LockScreen_Notification_IconCount" ConsumerID="{111DFF24-AA15-4A96-8006-2BFF8122084F}" TaskID="_default" />
+      <Extension ExtensionName="LockScreen_Notification_TextField" ConsumerID="{111DFF24-AA15-4A96-8006-2BFF8122084F}" TaskID="_default" />
+      <Extension ExtensionName="LockScreen_Background" ConsumerID="{111DFF24-AA15-4A96-8006-2BFF8122084F}" TaskID="_default" />
+    </Extensions>
+    <ScreenResolutions>
+      <ScreenResolution Name="ID_RESOLUTION_WVGA"/>
+      <ScreenResolution Name="ID_RESOLUTION_WXGA"/>
+      <ScreenResolution Name="ID_RESOLUTION_HD720P"/>
+    </ScreenResolutions>
+  </App>
+</Deployment>

@@ -1,0 +1,17 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:AppStudio.Controls">
+
+    <!-- HtmlList -->
+    <DataTemplate x:Key="GoPoleList">
+        <controls:WebControl Html="{Binding Items[0].Content}" Width="360" Height="520" Foreground="{StaticResource AppForegroundColor}"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
+    </DataTemplate>
+
+    <!-- HtmlItem -->
+    <DataTemplate x:Key="GoPoleItem">
+        <controls:WebControl Html="{Binding Content}" Width="360" Height="400" Foreground="{StaticResource AppForegroundColor}" />
+    </DataTemplate>
+        
+
+</ResourceDictionary>

@@ -1,0 +1,47 @@
+html {
+    background-color: #222222;
+}
+.strike {stroke:black; fill: white;}
+.strike_on {stroke:black; fill: #E8005C;}
+.ball {stroke:black; fill: white;}
+.ball_on {stroke:black; fill:#00C281;}
+.out {stroke:black; fill:white;}
+.out_on {stroke:black; fill:#E8005C;}
+.first_base {stroke:black; fill:white;}
+.first_base_on {stroke:black; fill:#FFF97E;}
+.second_base {stroke:black; fill:white;}
+.second_base_on {stroke:black; fill:#FFF97E;}
+.third_base {stroke:black; fill:white;}
+.third_base_on {stroke:black; fill:#FFF97E;}
+.vcenter {
+    display: inline-block;
+    float: none;
+}
+.broadcast {
+    color: white;
+    padding: 3.0%;
+    font-family: 'Lato',sans-serif;
+    background-color: #222222;
+}
+.stats {
+    color: white;
+    padding: 3.0%;
+    font-family: 'Lato',sans-serif;
+    background-color: #222222;
+
+}
+input {
+    color: black;
+}
+button{
+    background-color: white;
+    color: black;
+}
+.send{
+    background-color:#00C281;
+    color:white;
+}
+.reset{
+    background-color:#E8005C;
+    color:white;
+}

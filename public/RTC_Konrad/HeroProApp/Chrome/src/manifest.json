@@ -1,0 +1,12 @@
+{
+  "name": "HeroProApp",
+  "description": "Be a HERO! Control your gopro camera like a boss",
+  "manifest_version" : 2,
+  "version":"1.0","icons": {"128":"chrome-icon.png","16":"chrome-icon16.png"},
+  "app" : {
+    "background" : {
+      "scripts" : ["background.js"]
+    }
+  },
+  "permissions" : []
+}
