@@ -42,6 +42,10 @@ gem 'tzinfo-data'
 # https://github.com/pageman/heroku-client
 # https://github.com/pageman/heroku-client
 
+# https://github.com/pageman/heroku-client
+# https://github.com/pageman/heroku-client
+
+
 # > bundle install
 # > git add Gemfile Gemfile.lock
 # > git commit -m 'heroku deployment'
