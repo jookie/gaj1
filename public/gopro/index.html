@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<!--Stream your Desktop to HTML5 Video Element-->
+<!--
+ffmpeg -re -i "http://10.5.5.9:8080/live/amba.m3u8"
+-an -c copy  -s 400x300 -strict experimental  -b:v 300k -f
+flv "rtmp://my.wowza.server/application/mp4:direct live=1"
+ffmpeg -i "http://10.5.5.9:8080/live/amba.m3u8" -an -vcodec libx264 -s 400x300
+-strict experimental  -b:v 300k -b:a 4k -f flv "test.mp4"
+ffmpeg -y -i http://10.5.5.9:8080/live/amba.m3u8 -c:v copy -an test.mp4
+ffmpeg -re -i http://[IP]:8080/live/amba.m3u8 -c copy -c:a aac -strict experimental -b:a 96k -ac 2
+-ar 44100 -f flv "[RTMP] live=1"
+
+8) Once the stream is running, use FFplay (a media player bundled with FFmpeg)
+to validate the stream works:k
+ffplay  -window_title "Gaj Live GoProHero" -i http://10.5.5.9:8080/live/amba.m3u8
+
+ffmpeg -re -i http://10.5.5.9:8080/live/amba.m3u8 -f sap sap://224.0.0.255
+
+ffmpeg -re -i http://10.5.5.9:8080/live/amba.m3u8 -f sap sap://224.0.0.255?same_port=1
+
+ffmpeg -re -i input -f sap sap://[ff0e::1:2:3:4]
+
+
+https://wiki.videolan.org/Simple_Stream_VLC_to_Website
+
+ffmpeg -re -i "http://10.5.5.9:8080/live/amba.m3u8"
+-an -c copy  -s 400x300 -strict experimental -b:v 300k -f
+flv "rtp://127.0.0.1:1234:direct live=1"
+
+http://linuxers.org/tutorial/ffmpeg-tutorial-beginners
+
+https://github.com/KonradIT/goprowifihack
+https://gist.github.com/laurieainley/7663756
+Stream GoPro HERO4 to PC over WiFi | Editing tips with Sebastian Lindblad
+https://www.youtube.com/watch?v=LqPP3FsAdhM
+https://redd.it/2md8hm
+https://www.reddit.com/r/gopro/comments/2md8hm/how_to_livestream_from_a_gopro_hero4/
+ffmpeg, ffprobe, ffplay
+https://wiki.videolan.org/Simple_Stream_VLC_to_Website
+http://support.metacdn.com/hc/en-us/articles/204513935-How-To-Broadcast-A-Live-Stream-Using-FFmpeg
+ffmpeg -re -f lavfi -i "http://10.5.5.9:8080/live/amba.m3u8" -ar 8000 -f mulaw -f rtp rtp://127.0.0.1:1234
+
+ffmpeg -re -i http://10.5.5.9:8080/live/amba.m3u8 -c copy -c:a aac -strict experimental -b:a 96k -ac 2 -ar 44100 -f flv "rtp://127.0.0.1:1234 live=1"
+
+Auto Generated FFmpeg wrapper for C#/.NET and Mono
+https://github.com/Ruslan-B/FFmpeg.AutoGen
+
+Stream Player control
+http://www.codeproject.com/Articles/885869/Stream-Player-control
+
+DirectShow
+https://msdn.microsoft.com/en-us/library/dd375454(VS.85).aspx
+
+https://www.ffmpeg.org/ffmpeg-protocols.html#Examples
+
+https://trac.ffmpeg.org/wiki/StreamingGuide
+ffmpeg broadcast stream
+ffmpeg -re -threads 4 -f alsa -ac 1 -ar 22050 -i hw:2,0 -f v4l2
+-vcodec mjpeg -s 1280x720 -r 25 -i /dev/video0 -s 1280x720 -ar 11025 -ac 1 -b:a 32000 -f flv
+-vcodec libx264 -bufsize 512000 -maxrate 512000 -r 25 <your publish url>
+http://cam-do.com/WiGo/
+
+
+traveling salesman problem
+The travelling salesman problem (TSP) asks the following question:
+
+Given a list of cities and the distances between each pair of cities,
+what is the shortest possible route that visits each city
+exactly once and returns to the origin city?
+
+GoPro URL Commands
+http://hobbyrobo.com/gopro-url-commands/
+
+https://github.com/r1pper/GoPro.Hero
+
+http://pc.heropro.chernowii.com/
+ffserver
+
+https://trac.ffmpeg.org/wiki/ffserver
+
+ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.FileName = @"c:\Program Files\ffmpeg\ffmpeg\bin\ffplay.exe";
+                startInfo.Arguments = "-f h263 tcp://192.xxx.xxx.xx:1234";
+                Process.Start(startInfo);
+
+A Simple c# Wrapper for ffMpeg
+https://jasonjano.wordpress.com/2010/02/09/a-simple-c-wrapper-for-ffmpeg/
+
+ffplay transplant to MFC
+ffplay for MFC
+
+Need help integrating a Process.Start into my WPF project in a clever way.
+https://social.msdn.microsoft.com/Forums/vstudio/en-US/c234ea8a-4208-437d-aa5a-005df4531ace/need-help-integrating-a-processstart-into-my-wpf-project-in-a-clever-way?forum=wpf
+
+WPF MediaKit - For webcam, DVD and custom video support in WPF
+http://wpfmediakit.codeplex.com/
+http://mediaglass.codeplex.com/
+
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\VideoLAN
+C:\Program Files (x86)\VideoLAN\VLC\plugins
+C:\Program Files (x86)\VideoLAN\VLC\plugins
+http://www.videolan.org//doc/
+-->
+<html>
+
+<head lang="en">
+    <title>Go Pro Preview</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="author" content="Dov Peles">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="//cdn.webrtc-experiment.com/style.css">
+    <link rel="chrome-webstore-item"
+          href="https://chrome.google.com/webstore/detail/ajhifddimkapgcifgcodmmfdlknahffk">
+
+    <script src = 'heroproapp.js'> </script>
+    <!-- scripts used for screen-sharing -->
+    <script src='//cdn.webrtc-experiment.com/firebase.js'   ></script>
+    <script src="//cdn.webrtc-experiment.com/getScreenId.js"></script>
+    <script src="//cdn.webrtc-experiment.com/screen.js"     ></script>
+    <script type='text/JavaScript'>
+        function getXhr() {
+            var xhr = null;
+            if (window.XMLHttpRequest) // Firefox and others
+                xhr = new XMLHttpRequest();
+            else if (window.ActiveXObject) { // Internet Explorer
+                try {
+                    xhr = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            }
+            else { // XMLHttpRequest no supported
+                alert("Votre navigateur ne supporte pas les objets XMLHTTPRequest...");
+                xhr = false;
+            }
+            return xhr
+        }
+        /**
+         * Command
+         */
+        function command(device, app, command) {
+            var xhr = getXhr()
+
+            xhr.onreadystatechange = function () {
+
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    alert(xhr.responseText);
+                }
+            }
+
+            /*          pw = document.getElementById('wifiPassword').value
+             */
+            pw = 'goprohero27'
+            xhr.open('GET', 'http://10.5.5.9:80/' + device + '/' + app + '?t=' + pw + '&p=' + command);
+            xhr.send(null);
+        }
+    </script>
+    <!---write this in your head tag:--->
+    <!-- <script src="http://jwpsrv.com/library/9ompKvFTEeKn+hIxOQulpA.js"></script>-->
+    <!---Customizable JW Player:-->
+    <!--<div id='goproherolive'>Loading the player..</div>
+       <script type='text/javascript'>jwplayer('goproherolive').setup({
+               file: 'http://10.5.5.9:8080/live/amba.m3u8',
+               title: 'GoPro HERO Live Stream',width: '100%',aspectratio: '16:9',
+               callback: 'false',autostart: 'true'});</script>-->
+</head>
+<body>
+<!--<div id="control1"><br>
+    &nbsp;
+</div>-->
+<hr>
+<!-- just copy this <section> and next script -->
+<section class="experiment">
+    <section>
+        <!--<span>
+            Private ?? <a href="/screen-sharing/" target="_blank"
+            title="Open this link for private screen sharing!"><code><strong
+            id="unique-token">#123456789</strong></code></a>
+        </span>-->
+        <!-- <input type="text" id="user-name" placeholder="Your Name">-->
+        <button onclick="command('bacpac','PW','%01')">Turn GoPro ON</button>
+        <button onclick="command('bacpac','PW','%00')">Turn GoPro OFF</button>
+        <!--<button id="share-screen" class="setup">GoPro</button>-->
+        <button id="open-connections">Open-Connections</button>
+    </section>
+    <!-- list of all available broadcasting rooms -->
+    <table style="width: 100%;" id="rooms-list"></table>
+    <!-- local/remote videos container -->
+    <div id="videos-container"></div>
+</section>
+
+<script>
+
+    // Documentation - https://github.com/muaz-khan/WebRTC-Experiment/tree/master/screen-sharing
+
+    var videosContainer = document.getElementById("videos-container") || document.body;
+    var roomsList = document.getElementById('rooms-list');
+
+    var screensharing = new Screen();
+
+    screensharing.onscreen = function (_screen) {
+        var alreadyExist = document.getElementById(_screen.userid);
+        if (alreadyExist) return;
+
+        if (typeof roomsList === 'undefined') roomsList = document.body;
+
+        var tr = document.createElement('tr');
+
+        tr.id = _screen.userid;
+        tr.innerHTML = '<td>' + _screen.userid + ' shared his screen.</td>' +
+                '<td><button class="join">Preview His Screen</button></td>';
+        roomsList.insertBefore(tr, roomsList.firstChild);
+
+        var button = tr.querySelector('.join');
+        button.setAttribute('data-userid', _screen.userid);
+        button.setAttribute('data-roomid', _screen.roomid);
+        button.onclick = function () {
+            var button = this;
+            button.disabled = true;
+
+            var _screen = {
+                userid: button.getAttribute('data-userid'),
+                roomid: button.getAttribute('data-roomid')
+            };
+            screensharing.view(_screen);
+        };
+    };
+
+    // on getting each new screen
+    screensharing.onaddstream = function (media) {
+        media.video.id = media.userid;
+
+        var video = media.video;
+        video.setAttribute('controls', true);
+        videosContainer.insertBefore(video, videosContainer.firstChild);
+        video.play();
+        rotateVideo(video);
+    };
+
+    // using firebase for signaling
+    // screen.firebase = 'signaling';
+
+    // if someone leaves; just remove his screen
+    screensharing.onuserleft = function (userid) {
+        var video = document.getElementById(userid);
+        if (video && video.parentNode) video.parentNode.removeChild(video);
+    };
+
+    // check pre-shared screens
+    screensharing.check();
+
+    document.getElementById('share-screen').onclick = function () {
+        screensharing.share();
+        this.disabled = true;
+    };
+
+    document.getElementById('share-screen').onclick = function () {
+    /*
+        var username = document.getElementById('user-name');
+        username.disabled = this.disabled = true;
+    */
+        screensharing.isModerator = true;
+        /*screensharing.userid = username.value;*/
+        screensharing.userid = "dov"
+        screensharing.share();
+    };
+
+    function rotateVideo(video) {
+        video.style[navigator.mozGetUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(0deg)';
+        setTimeout(function () {
+            video.style[navigator.mozGetUserMedia ? 'transform' : '-webkit-transform'] = 'rotate(360deg)';
+        }, 1000);
+    }
+
+  /*  (function () {
+        var uniqueToken = document.getElementById('unique-token');
+        if (uniqueToken)
+            if (location.hash.length > 2)
+                uniqueToken.parentNode.parentNode.parentNode.innerHTML = '<h2 style="text-align:center;"><a href="' + location.href + '" target="_blank">Share this link</a></h2>';
+            else
+                uniqueToken.innerHTML = uniqueToken.parentNode.parentNode.href = '#' + (Math.random() * new Date().getTime()).toString(36).toUpperCase().replace(/\./g, '-');
+    })();*/
+
+    screensharing.onNumberOfParticipantsChnaged = function (numberOfParticipants) {
+        if (!screensharing.isModerator) return;
+
+        document.title = numberOfParticipants + ' users are viewing your screen!';
+        var element = document.getElementById('number-of-participants');
+        if (element) {
+            element.innerHTML = numberOfParticipants + ' users are viewing your screen!';
+        }
+    };
+</script>
+
+<!--<input type="text" id="text-chat" placeholder="text chat" disabled>-->
+<!--<button id="stop-screen" disabled>stop-screen</button>-->
+<!--<button id="stop-audio-video" disabled>stop-audio-video</button>-->
+<hr/>
+
+<script src="//cdn.webrtc-experiment.com/RTCMultiConnection.js"></script>
+<script src="//cdn.webrtc-experiment.com/firebase.js"></script>
+<script>
+    document.querySelector('#open-connections').onclick = function () {
+        audioVideoConnection.open();
+        dataOnlyConnection.open();
+        screenOnlyConnection.open();
+
+        this.disabled = true;
+    };
+
+    var channel = location.href.replace(/\/|:|#|%|\.|\[|\]/g, '');
+
+    var audioVideoConnection    = new RTCMultiConnection(channel + 'audioVideoConnection');
+
+    var dataOnlyConnection      = new RTCMultiConnection(channel + 'dataOnlyConnection');
+
+    var screenOnlyConnection    = new RTCMultiConnection(channel + 'screenOnlyConnection');
+
+    audioVideoConnection.session = {
+        audio: true,
+        video: true
+    };
+
+ /*   dataOnlyConnection.session = {
+        data: true
+    };*/
+
+    screenOnlyConnection.session = {
+        screen: true,
+        oneway: true
+    };
+
+    audioVideoConnection.onstream = screenOnlyConnection.onstream = function (e) {
+        document.body.appendChild(e.mediaElement);
+    };
+
+ /*   function appendData(data) {
+        var h1 = document.createElement('h1');
+        h1.innerHTML = data;
+        document.body.insertBefore(h1, document.body.firstChild);
+    }*/
+
+    dataOnlyConnection.onopen = function () {
+        document.querySelector('#stop-audio-video').disabled = false;
+        document.querySelector('#stop-screen').disabled = false;
+        /*document.querySelector('#text-chat').disabled = false;*/
+    };
+
+/*    dataOnlyConnection.onmessage = function (e) {
+        appendData(e.data);
+    };*/
+
+    audioVideoConnection.connect();
+
+ /*   dataOnlyConnection.connect();*/
+
+    screenOnlyConnection.connect();
+
+/*    document.querySelector('#text-chat').onkeyup = function (e) {
+        if (e.keyCode != 13) return;
+        dataOnlyConnection.send(this.value);
+        appendData(this.value);
+        this.value = '';
+    };*/
+
+    document.querySelector('#stop-audio-video').onclick = function () {
+        this.disabled = true;
+        audioVideoConnection.close();
+    };
+
+    document.querySelector('#stop-screen').onclick = function () {
+        this.disabled = true;
+        screenOnlyConnection.close();
+    };
+</script>
+<!---You can embed a preview for Windows using VLC WEBplugin:--->
+<!--<embed type="application/x-vlc-plugin"
+       name="goprolivestream"
+       autoplay="yes" loop="no" width="400" height="300"
+       target="http://10.5.5.9:8080/live/amba.m3u8"/>
+<br/>-->
+<!--<a href="javascript:;" onclick='document.goprolivestream.play()'>Play GoPro Live Stream</a>
+<a href="javascript:;" onclick='document.goprolivestream.pause()'>Pause GoPro Live Stream</a>
+<a href="javascript:;" onclick='document.goprolivestream.stop()'>Stop GoPro Live Stream</a>
+<a href="javascript:;" onclick='document.goprolivestream.fullscreen()'>Fullscreen the Live preview</a>-->
+<!---Alternatively, you can embed the preview using JW Player.--->
+<!--
+<video src="http://127.0.0.1:1234"
+  width="700" autoplay controls type="video/ogg" codecs="theora">
+</video>
+-->
+</body>
+</html>
